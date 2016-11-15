@@ -125,6 +125,9 @@
       });
     }, false);
     elem[0].addEventListener('paste', function (evt) {
+      if (evt === undefined || evt === null) {
+        return;
+      }
       if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1 &&
         attrGetter('ngfEnableFirefoxPaste', scope)) {
         evt.preventDefault();
